@@ -7,14 +7,26 @@ String getFullName(String firstName, String lastName) {
   return '$firstName $lastName';
 }
 
-void test_statements() {
-  final name = 'Damien2';
-  if (name == 'Damien') print('Yes');
-  else if (name == 'Damien2') print('Yes2');
-  print('No');
+void testStatements() {
+
+  const person = {
+    'age': 20,
+    'name': 'Damien',
+  };
+
+  final name = ['Damien', 'Prouet'];
+  final firstName = name[0];
+  name.add('My name');
+  final lastName = name[name.length-1];
+  var nameLenght = name.length;
+
+  print(firstName);
+  print(nameLenght);
+  print(lastName);
+  print(person);
 }
 
-void test_operands() {
+void testOperands() {
   var age = 26;
   final twiceAge = age * 2;
   print(age);
@@ -32,8 +44,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test_statements();
-    test_operands();
+    testStatements();
+    // test_operands();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
