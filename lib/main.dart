@@ -33,6 +33,11 @@ void testOperands() {
   print(twiceAge);
 }
 
+void typeNullable() {
+  const String? name = null;
+  print(name);
+}
+
 void main() {
 
   runApp(const MyApp());
