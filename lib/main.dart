@@ -34,8 +34,27 @@ void testOperands() {
 }
 
 void typeNullable() {
-  const String? name = null;
+  String? name = null;
   print(name);
+  name = "Damien";
+  print(name);
+}
+
+void test_Nullable2() {
+  const String? firstName = null;
+  const String? middleName = null;
+  const String? lastName = "Prouet";
+
+  //This will test if firstName is null, then if middleName is, otherwise it's lastName
+  const firstNonNullValue = firstName ?? middleName ?? lastName;
+  print(firstNonNullValue);
+}
+
+void testList1() {
+  List<String?>? names = ["Damien", "Prouet"];
+  print(names);
+  names = null;
+  print(names);
 }
 
 void main() {
