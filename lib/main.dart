@@ -7,6 +7,10 @@ String getFullName(String firstName, String lastName) {
   return '$firstName $lastName';
 }
 
+enum PersonProperties {
+  firstName, lastName, age,
+}
+
 void testStatements() {
 
   const person = {
@@ -55,6 +59,11 @@ void testList1() {
   print(names);
   names = null;
   print(names);
+}
+
+void listLenght(List <String>? names) {
+  final length = names?.length ?? 0;
+  print(length);
 }
 
 void main() {
