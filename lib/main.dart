@@ -1,73 +1,23 @@
 import 'package:flutter/material.dart';
 
-const age = 26;
-const twiceTheAge = age * 2;
-
-String getFullName(String firstName, String lastName) {
-  return '$firstName $lastName';
+class Cat {
+  final String name;
+  Cat(this.name);
 }
 
-enum PersonProperties {
-  firstName, lastName, age,
+extension Run on Cat {
+  void run() {
+    print("Cat $name is running");
+  }
 }
 
-void testStatements() {
-
-  const person = {
-    'age': 20,
-    'name': 'Damien',
-  };
-
-  final name = ['Damien', 'Prouet'];
-  final firstName = name[0];
-  name.add('My name');
-  final lastName = name[name.length-1];
-  var nameLenght = name.length;
-
-  print(firstName);
-  print(nameLenght);
-  print(lastName);
-  print(person);
-}
-
-void testOperands() {
-  var age = 26;
-  final twiceAge = age * 2;
-  print(age);
-  print(twiceAge);
-}
-
-void typeNullable() {
-  String? name = null;
-  print(name);
-  name = "Damien";
-  print(name);
-}
-
-void test_Nullable2() {
-  const String? firstName = null;
-  const String? middleName = null;
-  const String? lastName = "Prouet";
-
-  //This will test if firstName is null, then if middleName is, otherwise it's lastName
-  const firstNonNullValue = firstName ?? middleName ?? lastName;
-  print(firstNonNullValue);
-}
-
-void testList1() {
-  List<String?>? names = ["Damien", "Prouet"];
-  print(names);
-  names = null;
-  print(names);
-}
-
-void listLenght(List <String>? names) {
-  final length = names?.length ?? 0;
-  print(length);
+void test() {
+  final fluffer = Cat('Fluffer');
+  fluffer.run();
 }
 
 void main() {
-
+  test();
   runApp(const MyApp());
 }
 
@@ -77,7 +27,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    testStatements();
     // test_operands();
     return MaterialApp(
       title: 'Flutter Demo',
